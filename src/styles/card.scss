@@ -13,16 +13,6 @@
   color: inherit;
   box-sizing: border-box;
 
-  &:hover {
-    transform: scale(1.2);
-    z-index: 10;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-
-    .card__title {
-      color: $color-title-hover;
-    }
-  }
-
   &__image {
     max-width: 100%;
     height: auto;
@@ -35,7 +25,7 @@
     text-decoration: none;
     display: block;
     font-weight: 700;
-    color: #003366;
+    color: #036;
     margin: 0 0 8px;
     transition: color $transition-speed;
     text-align: left;
@@ -85,7 +75,7 @@
   &:hover {
     transform: scale(1.2);
     z-index: 10;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
 
     .card__title {
       color: $color-title-hover;
