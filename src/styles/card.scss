@@ -1,0 +1,83 @@
+.card {
+  width: $card-width;
+  padding: 15px;
+  border: 1px solid $border-color;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  transition:
+    transform $transition-speed,
+    box-shadow $transition-speed;
+  text-decoration: none;
+  color: inherit;
+  box-sizing: border-box;
+
+  &__image {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto 15px;
+  }
+
+  &__title {
+    font-size: 13px;
+    font-weight: 700;
+    color: $color-nav;
+    margin: 0 0 8px;
+    transition: color $transition-speed;
+    text-align: left;
+    height: 36px;
+    overflow: hidden;
+  }
+
+  &__code {
+    font-size: 11px;
+    color: #999;
+    margin-bottom: 10px;
+  }
+
+  &__footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 15px 0;
+  }
+
+  &__price-label {
+    font-size: 13px;
+  }
+
+  &__price {
+    font-size: 18px;
+    font-weight: 700;
+  }
+
+  &__button {
+    background-color: $color-nav-hover;
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+    padding: 10px;
+    font-weight: 700;
+    font-size: 13px;
+    border-radius: 4px;
+    transition: all $transition-speed;
+    text-transform: uppercase;
+    border: 2px solid $color-nav-hover;
+  }
+
+  &:hover {
+    transform: scale(1.2);
+    z-index: 10;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+
+    .card__title {
+      color: $color-title-hover;
+    }
+
+    .card__button {
+      background-color: #fff;
+      color: $color-nav-hover;
+    }
+  }
+}
