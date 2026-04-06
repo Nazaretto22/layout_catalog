@@ -1,27 +1,21 @@
 .stars {
   display: flex;
-  gap: 2px;
-  margin-bottom: 8px;
+  align-items: center;
+  gap: 4px;
 
-  &__item {
-    width: 16px;
-    height: 16px;
+  &__star {
+    width: $star-size;
+    height: $star-size;
     background-image: url('../images/star.svg');
-    background-size: contain;
     background-repeat: no-repeat;
+    background-position: center;
   }
+}
 
-  &__count {
-    width: 53px;
-    height: 16px;
-    font-size: 10px;
-    line-height: 14px;
-  }
-
-
-  @for $i from 1 through 5 {
-    &--#{$i} {
-      .stars__item:nth-child(-n + #{$i}) {
+@for $i from 1 through 5 {
+  .stars--#{$i} {
+    @for $j from 1 through $i {
+      .stars__star:nth-child(#{$j}) {
         background-image: url('../images/star-active.svg');
       }
     }

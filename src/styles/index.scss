@@ -1,85 +1,29 @@
 @import 'variables';
-@import 'stars';
 @import 'card';
+@import 'stars';
+@import 'header';
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 
 body {
   margin: 0;
-  font-family: $main-font;
-  background-color: #fff;
-  color: #333;
-}
-
-.container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 20px 40px;
-  width: 100%;
-}
-
-.logo {
-  display: flex;
-  flex-shrink: 0;
-}
-
-
-.header {
-  height: 60px;
-  background-color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  border-bottom: 1px solid #e0e0e0;
-}
-
-.nav {
-  &__list {
-    display: flex;
-    list-style: none;
-    gap: 20px;
-    margin: 0;
-    padding: 0;
-  }
-
-  &__link {
-    font-size: 12px;
-    text-decoration: none;
-    font-weight: 700;
-    color: $color-nav;
-    text-transform: uppercase;
-    transition: color $transition-speed;
-
-    &:hover {
-      color: $color-nav-hover;
-    }
-
-    &.is-active {
-      color: $color-nav-hover;
-      position: relative;
-
-      &::after {
-        content: '';
-        position: absolute;
-        bottom: -21px;
-        left: 0;
-        width: 100%;
-        height: 3px;
-        background-color: $color-nav-hover;
-      }
-    }
-  }
+  font-family: Roboto, sans-serif;
 }
 
 .catalog {
+  padding: 50px 40px;
+}
+
+.grid {
   display: grid;
   justify-content: center;
   gap: 46px 48px;
-  padding: 50px 40px;
-  align-items: start;
-  grid-auto-rows: min-content;
-
+  overflow: visible;
   grid-template-columns: repeat(1, $card-width);
-
 
   @media (min-width: 488px) {
     grid-template-columns: repeat(2, $card-width);

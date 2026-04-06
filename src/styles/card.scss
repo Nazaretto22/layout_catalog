@@ -1,89 +1,125 @@
 .card {
-  width: $card-width;
-  padding: 15px;
-  border: 1px solid #e0e0e0;
-  display: flex;
-  flex-direction: column;
-  background-color: #fff;
-  transition:
-    transform $transition-speed,
-    box-shadow $transition-speed;
-  text-decoration: none;
-  transform-origin: center center;
-  color: inherit;
   box-sizing: border-box;
-
-  &__image {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 0 auto 12px;
-  }
-
-  &__title {
-    font-size: 12px;
-    text-decoration: none;
-    display: block;
-    font-weight: 700;
-    color: #036;
-    margin: 0 0 8px;
-    transition: color $transition-speed;
-    text-align: left;
-    height: 36px;
-    overflow: hidden;
-    min-height: 34px;
-  }
-
-  &__code {
-    font-size: 10px;
-    color: #999;
-    margin-bottom: 10px;
-    line-height: 14px;
-  }
-
-  &__footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 15px 0;
-    margin-top: auto;
-  }
-
-  &__price-label {
-    font-size: 13px;
-  }
-
-  &__price {
-    font-weight: bold;
-    font-size: 16px;
-  }
-
-  &__button {
-    background-color: $color-nav-hover;
-    color: #fff;
-    text-decoration: none;
-    text-align: center;
-    padding: 10px;
-    font-weight: 700;
-    font-size: 13px;
-    border-radius: 4px;
-    transition: background-color $transition-speed, color $transition-speed, border-color $transition-speed;
-    text-transform: uppercase;
-    border: 2px solid $color-nav-hover;
-  }
+  background-color: $card-bg-color;
+  border-radius: $border-radius;
+  border: 1px solid $card-border-color;
+  padding: 16px;
+  width: 200px;
+  height: 406px;
+  transform-origin: center top;
+  isolation: isolate;
+  will-change: transform;
+  transition: transform 0.3s;
+  z-index: 0;
 
   &:hover {
     transform: scale(1.2);
-    z-index: 10;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    z-index: 2;
+  }
 
-    .card__title {
-      color: $color-title-hover;
+  &__image {
+    width: 160px;
+    height: 134px;
+    display: block;
+    margin: 16px auto;
+  }
+
+  &__title {
+    margin: 40px 0 4px;
+    font-size: $font-size-md;
+    font-weight: 500;
+    line-height: 18px;
+    letter-spacing: 0;
+    color: $color-text;
+    transition: color 0.3s;
+  }
+
+  &:hover .card__title {
+    color: $card-hover;
+  }
+
+  &__code {
+    margin: 0 0 $card-margin-bottom;
+    font-size: $font-size-sm;
+    font-weight: 400;
+    line-height: 14px;
+    letter-spacing: 0;
+    color: $color-text-light;
+  }
+
+  &__button {
+    margin-bottom: $card-margin-bottom;
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    height: 40px;
+    background-color: $color-primary;
+    color: $card-bg-color;
+    border-radius: $border-radius;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    text-align: center;
+    line-height: 40px;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: 1px solid transparent;
+    transition:
+      background-color 0.3s,
+      color 0.3s,
+      border-color 0.3s;
+
+    &:hover {
+      background-color: $card-bg-color;
+      color: $color-primary;
+      border: 1px solid $color-primary;
+    }
+  }
+
+  &__price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: $card-margin-bottom;
+
+    &-text {
+      margin: 0;
+      font-size: $font-size-md;
+      font-weight: 400;
+      line-height: 18px;
+      letter-spacing: 0;
+      vertical-align: bottom;
+      color: $color-text-light;
     }
 
-    .card__button {
-      background-color: #fff;
-      color: $color-nav-hover;
+    &-count {
+      display: flex;
+      align-items: center;
+      margin: 0;
+      font-size: $font-size-lg;
+      font-weight: 700;
+      line-height: 18px;
+      color: $color-text;
+      vertical-align: bottom;
+    }
+  }
+
+  &__reviews {
+    gap: 17px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+
+    &-count {
+      margin: 0;
+      display: flex;
+      align-items: center;
+      font-size: $font-size-sm;
+      font-weight: 400;
+      line-height: 14px;
+      color: $color-text;
+      vertical-align: bottom;
     }
   }
 }
